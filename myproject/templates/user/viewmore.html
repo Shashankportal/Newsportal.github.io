@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="col-sm-1"></div>
+{% if data %}
+{% for x in data%}
+<div class="col-sm-10 bg-light p-5">
+<div class="row">
+    <div class="col-sm-4">
+        <img class="img-thumbnail w-100" src="/{{x.newspic}}" style="height:px;"/>
+        </div>
+        <div class="col-sm-8">
+            <div class="btn btn-danger rounded-pill">{{x.ncategory}}</div><br/>
+            <p class="fw-bold">{{x.headlines}}</p>
+            <i class="fw-bold fs-6">{{x.city}}</i>,<i class="fw-bold fs-6 text-muted">{{x.ndate}}</i>
+            <br/><b>{{x.subject}}</b><br/>
+            <p>{{x.newsdes}}</p><br/>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+<div class="col-sm-1"></div>
+</div>
+{% endblock %}

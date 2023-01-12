@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+<div class="h2 text-center">Sign<b class="text-warning">Up <i class="fa fa-users"></i></b></div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 p-5 bg-warning">
+        <form method="post" enctype="multipart/form-data">
+           {% csrf_token %}
+            Name<input type="text" name="name" required class="form-control" placeholder="Enter Your Nmae"/>
+            Mobile<input type="number" name="mobile" required class="form-control" placeholder="Enter Your Mobile No"/>
+            Email<input type="email" name="email" required class="form-control" placeholder="Enter Your Email"/>
+            Password<input type="password" name="passwd" required class="form-control" placeholder="Enter Your Password"/>
+            Profile Picture<input type="file" name="fu" required class="from-control"/>
+            Address
+            <textarea class="form-control" name="address" style="..." placeholder="Enter Your Address..."/>
+            <input type="submit" value="save" class="btn btn-danger"/>
+</form>
+</div>
+</div>
+

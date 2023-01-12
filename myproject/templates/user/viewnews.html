@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+.l{ color:black;}
+    .l:hover
+    {
+     color:black;
+      border-top:2px solid white;
+    }
+
+
+</style>
+<div class="row">
+    <div class="h1 text-center">Category <b>News</b>
+    </div>
+    <hr/>
+    <div class="col-sm-4">
+        <ul class="list-group">
+            <li class="list-group-item active bg-danger" aria-current="true">News Category</li>
+            {% if c %}
+            {% for x in c%}
+            <li class="list-group-item"><a href="/user/vnews?abc={{x.id}}" class="text-decoration-none l">{{x.cname}}</a>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        {% if n %}
+        {% for a in n %}
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/{{a.newspic}}" class="img-fluid rounded-start w-100 h-50" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body bg-light">
+                        <h5 class="card-title h2">{{a.ncategory}}</h5>
+                        <p class="card-text h4">{{a.headlines}}</p>
+                        <p class="card-text fw-bolder">{{a.subject}}</p>
+                        <p class="scard-text ">{{a.newsdes}}</p>
+                        <p class="card-text"><small class="text-muted">Date : {{a.ndate}} || City : {{a.city}} </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+py
